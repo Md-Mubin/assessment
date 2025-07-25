@@ -8,7 +8,7 @@ export default async function ProductPage({ params }) {
   let getSlugData = await getData.ielts_course_data(slug, defaultLang)
 
   return (
-    <>
+    <> 
       <main>
         <LangSwitch slug={slug} initialLang={defaultLang} initialData={getSlugData}/>
       </main>
