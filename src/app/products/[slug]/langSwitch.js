@@ -50,7 +50,7 @@ export default function LangSwitch({ slug, initialLang, initialData }) {
                     Bangla
                 </button>
             </div>
-
+ 
             <h1 className="text-3xl font-bold mb-2">{data?.title || "Loading..."}</h1>
             <div
                 dangerouslySetInnerHTML={{ __html: data.description }}
