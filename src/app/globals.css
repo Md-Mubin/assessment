@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-Gmono: var(--font-geist-mono);
+  --font-nunito: var(--font-nunito);
+}
+
+@utility container {
+  width: 100%;
+  padding-inline: 10px;
+
+  @variant lg {
+    width: 1200px;
+    margin : 0 auto;
+    padding-inline: 0px;
+  }
 }

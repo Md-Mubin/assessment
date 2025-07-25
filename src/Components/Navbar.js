@@ -1,32 +1,23 @@
 "use client";
-
-import { useRouter, useSearchParams } from "next/navigation";
+import { useLang } from "@/contexts/langContext";
+import { useRouter, usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const { lang, setLang } = useLang();
   const router = useRouter();
-  const searchParams = useSearchParams();
+  const pathname = usePathname();
 
-  const changeLang = (lang) => {
-    const params = new URLSearchParams(searchParams.toString());
-    params.set("lang", lang);
-
-    router.replace(`?${params.toString()}`, { scroll: false });
+  const handleLangChange = (newLang) => {
+    const url = new URL(window.location.href);
+    url.searchParams.set("lang", newLang);
+    router.push(`${pathname}?${url.searchParams.toString()}`);
+    setLang(newLang);
   };
 
   return (
     <nav className="p-4 bg-gray-100">
-      <button
-        onClick={() => changeLang("en")}
-        className="mr-2 px-4 py-2 bg-blue-500 text-white rounded"
-      >
-        English
-      </button>
-      <button
-        onClick={() => changeLang("bn")}
-        className="px-4 py-2 bg-green-500 text-white rounded"
-      >
-        Bangla
-      </button>
+      <button onClick={() => handleLangChange("en")} className={`mr-2 ${lang === "en" ? "font-bold" : ""}`}>EN</button>
+      <button onClick={() => handleLangChange("bn")} className={`${lang === "bn" ? "font-bold" : ""}`}>BN</button>
     </nav>
   );
 }
