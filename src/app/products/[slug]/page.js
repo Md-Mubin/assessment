@@ -21,8 +21,8 @@ export default function ProductPage() {
         <Banner propData={{ title: data?.title, description: data?.description }} />
         <div className="container">
           <ul className="flex justify-between">
-            <li>
-              <Instructor propData={data?.media} />
+            <li className="w-[650px]">
+              <Instructor propData={data?.sections} />
               <CourseLaidOut propData={data?.sections} />
               <LearnFromCourse propData={data?.sections} />
               <ExclusiveFeat propData={data?.sections} />
@@ -31,7 +31,7 @@ export default function ProductPage() {
             <li className="w-[500px] mt-[-15%]">
               <Trailer propData={data?.media} />
               <CTA_text propData={data?.cta_text}/>
-              <CheckList propData={data?.CheckList}/>
+              <CheckList propData={data?.checklist}/>
             </li>
           </ul>
         </div>

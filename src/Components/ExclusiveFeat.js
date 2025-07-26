@@ -5,7 +5,6 @@ export default function ExclusiveFeat({ propData }) {
     return (
         <>
             <section>
-                <div>{data?.name}</div>
 
                
             </section>

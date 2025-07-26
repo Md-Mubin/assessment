@@ -23,7 +23,7 @@ export default function Trailer({ propData }) {
                     navigation
                     thumbs={{ swiper: thumbsSwiper }}
                     modules={[Navigation, Thumbs]}
-                    className="rounded-lg"
+                    className="rounded-lg shadow-[0px_0px_10px_#000]"
                     onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}>
 
                     {
@@ -33,7 +33,7 @@ export default function Trailer({ propData }) {
                                     <img
                                         src={item?.resource_type === 'video' ? item?.thumbnail_url : item?.resource_value}
                                         alt={item?.name}
-                                        className="w-full h-full rounded" />
+                                        className='h-full'/>
 
                                     {
                                         item?.resource_type === 'video' && (
@@ -71,7 +71,7 @@ export default function Trailer({ propData }) {
                                 <img
                                     src={item?.resource_type === 'video' ? item?.thumbnail_url : item?.resource_value}
                                     alt={`Thumbnail ${index}`}
-                                    className="w-full cursor-pointer" />
+                                    className="w-full h-[60px] cursor-pointer" />
 
                             </SwiperSlide>
                         ))

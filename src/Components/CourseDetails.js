@@ -5,7 +5,6 @@ export default function CourseDetails({ propData }) {
     return (
         <>
             <section>
-                <div>{data?.name}</div>
 
                
             </section>
