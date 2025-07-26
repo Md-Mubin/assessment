@@ -7,15 +7,13 @@ import { getData } from "@/Service/api";
 const LangContext = createContext();
 
 export const LangProvider = ({ slug, children }) => {
-    
+
   const searchParams = useSearchParams();
   const [lang, setLang] = useState("en");
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    const urlLang = searchParams.get("lang");
-    const storedLang = localStorage.getItem("lang");
-    const finalLang = urlLang || storedLang || "en";
+    const finalLang = searchParams.get("lang") || "en";
 
     setLang(finalLang);
   }, [searchParams]);
@@ -23,18 +21,16 @@ export const LangProvider = ({ slug, children }) => {
   useEffect(() => {
     if (!slug || !lang) return;
 
-    const fetchData = async () => {
-      try {
-        const res = await getData.ielts_course_data(slug, lang);
-        console.log(res)
-        setData(res);
-        localStorage.setItem("lang", lang);
-      } catch (err) {
-        console.error("Lang fetch error:", err);
-      } 
-    };
-
-    fetchData();
+    (
+      async () => {
+        try {
+          const res = await getData.ielts_course_data(slug, lang);
+          setData(res);
+        } catch (err) {
+          console.error("Lang fetch error:", err);
+        }
+      }
+    )()
   }, [slug, lang]);
 
   return (

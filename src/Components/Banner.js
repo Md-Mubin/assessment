@@ -1,10 +1,11 @@
 
 export default function Banner({ propData }) {
+    
     return (
         <>
-            <section className="w-full py-20 bg-[url('/images/banner.jpg')] bg-center bg-cover bg-no-repeat">
+            <header className="w-full py-20 bg-[url('/images/banner.jpg')] bg-center bg-cover bg-no-repeat">
                 <div className="container">
-                    <article className="w-[700px]">
+                    <article className="lg:w-[600px]">
                         <h1 className="text-4xl font-bold text-white">{propData?.title}</h1>
 
                         <div
@@ -12,7 +13,7 @@ export default function Banner({ propData }) {
                             dangerouslySetInnerHTML={{ __html: propData?.description || "" }} />
                     </article>
                 </div>
-            </section>
+            </header>
         </>
     )
 }
