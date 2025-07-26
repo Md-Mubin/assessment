@@ -1,4 +1,5 @@
 export default function Instructor({ propData }) {
+    
     return (
         <>
             <section className="w-full h-[100dvh]">

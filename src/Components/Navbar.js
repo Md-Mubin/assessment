@@ -15,9 +15,14 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="p-4 bg-gray-100">
-      <button onClick={() => handleLangChange("en")} className={`mr-2 ${lang === "en" ? "font-bold" : ""}`}>EN</button>
-      <button onClick={() => handleLangChange("bn")} className={`${lang === "bn" ? "font-bold" : ""}`}>BN</button>
+    <nav className=" py-2 bg-gray-100">
+      <div className="container text-end">
+        <button
+          onClick={lang === "en" ? () => handleLangChange("bn") : () => handleLangChange("en")}
+          className={`py-3 px-8 rounded-lg duration-200 cursor-pointer hover:bg-slate-400 bg-slate-500 font-nunito font-semibold tracking-widest text-lg text-white`}>
+          {lang === "en" ? "BN" : "EN"}
+        </button>
+      </div>
     </nav>
   );
 }

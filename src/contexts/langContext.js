@@ -26,6 +26,7 @@ export const LangProvider = ({ slug, children }) => {
     const fetchData = async () => {
       try {
         const res = await getData.ielts_course_data(slug, lang);
+        console.log(res)
         setData(res);
         localStorage.setItem("lang", lang);
       } catch (err) {
