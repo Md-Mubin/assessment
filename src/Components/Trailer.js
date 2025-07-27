@@ -10,7 +10,7 @@ export default function Trailer({ propData }) {
     
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const [activeIndex, setActiveIndex] = useState(0);
-
+    
     const mediaItems = [propData[0], ...propData.slice(3)];
 
     return (
