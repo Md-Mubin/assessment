@@ -41,7 +41,7 @@ export default function Trailer({ propData }) {
                                                 href={`https://www.youtube.com/watch?v=${item?.resource_value}`}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="absolute inset-0 flex items-center justify-center text-white text-4xl bg-black/50 hover:bg-black/70 transition">
+                                                className="absolute inset-0 flex items-center justify-center text-white text-4xl bg-black/30 hover:bg-black/50 duration-200">
                                                 ▶
                                             </a>
                                         )
@@ -66,7 +66,7 @@ export default function Trailer({ propData }) {
                         mediaItems.map((item, index) => (
                             <SwiperSlide
                                 key={index}
-                                className={`${index === activeIndex && 'border-3 rounded border-blue-600'}`} >
+                                className={`${index === activeIndex && 'border-2 opacity-100 rounded border-blue-600'}`} >
 
                                 <img
                                     src={item?.resource_type === 'video' ? item?.thumbnail_url : item?.resource_value}

@@ -22,3 +22,11 @@
 .swiper-button-prev::after, .swiper-button-next::after{
   @apply text-lg! font-bold! 
 }
+
+.accordion-content {
+  transition: height 300ms ease;
+}
+
+.szh-accordion__item-btn{
+  @apply w-full text-start
+}
