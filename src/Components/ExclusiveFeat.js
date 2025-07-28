@@ -24,7 +24,7 @@ export default function ExclusiveFeat({ propData }) {
                                 </li>
 
                                 <li>
-                                    <img src={feature.file_url} alt={feature.title} className="w-[200px]"/>
+                                    <img loading="lazy" src={feature.file_url} alt={feature.title} className="w-[200px]"/>
                                 </li>
                             </ul>
                         ))

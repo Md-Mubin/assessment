@@ -12,7 +12,7 @@ export default function CourseLaidOut({ propData }) {
                         data?.values.map((items)=>(
                             <ul key={items?.id} className="flex items-start justify-between gap-5">
                                 <li>
-                                    <img src={items?.icon} alt="icons"/>
+                                    <img loading="lazy" src={items?.icon} alt="icons"/>
                                 </li>
                                 <li className="w-[230px]">
                                     <h5 className="text-white">{items?.title}</h5>

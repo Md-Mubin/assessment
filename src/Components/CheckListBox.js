@@ -17,7 +17,7 @@ export default function CheckListBox({ checkLists, ctaText }) {
                     checkLists.map((items) => (
                         <ul key={items?.id} className={`flex items-center gap-6 py-1 font-semibold sm:text-lg tracking-wider text-${items?.color}`}>
                             <li>
-                                <img src={items?.icon} alt="#" className="w-[25px]" />
+                                <img loading="lazy" src={items?.icon} alt="icons images" className="w-[25px]" />
                             </li>
                             <li>
                                 <p>{items?.text}</p>

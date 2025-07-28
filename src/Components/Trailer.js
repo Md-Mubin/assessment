@@ -7,10 +7,10 @@ import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 
 export default function Trailer({ propData }) {
-    
+
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const [activeIndex, setActiveIndex] = useState(0);
-    
+
     const mediaItems = [propData[0], ...propData.slice(3)];
 
     return (
@@ -31,9 +31,10 @@ export default function Trailer({ propData }) {
                             <SwiperSlide key={index}>
                                 <div className="relative aspect-video">
                                     <img
+                                        loading='lazy'
                                         src={item?.resource_type === 'video' ? item?.thumbnail_url : item?.resource_value}
                                         alt={item?.name}
-                                        className='h-full'/>
+                                        className='h-full' />
 
                                     {
                                         item?.resource_type === 'video' && (
@@ -69,8 +70,9 @@ export default function Trailer({ propData }) {
                                 className={`${index === activeIndex && 'border-2 opacity-100 rounded border-blue-800'}`} >
 
                                 <img
+                                    loading='lazy'
                                     src={item?.resource_type === 'video' ? item?.thumbnail_url : item?.resource_value}
-                                    alt={`Thumbnail ${index}`}
+                                    alt={item?.name}
                                     className="w-full h-[60px] cursor-pointer" />
 
                             </SwiperSlide>
