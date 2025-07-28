@@ -1,6 +1,4 @@
-import {
-    Accordion, AccordionItem
-} from "@szhsin/react-accordion"
+import { Accordion, AccordionItem } from "@szhsin/react-accordion"
 
 export default function CourseDetails({ propData }) {
 
@@ -11,15 +9,17 @@ export default function CourseDetails({ propData }) {
             <section className="w-full py-6">
                 <h2 className="text-xl font-bold mb-4">{data?.name}</h2>
 
-                <Accordion className="w-full border border-[#00000033] rounded-lg shadow px-5 pt-4 pb-8" transition transitionTimeout={500} mountOnEnter>
+                <Accordion className="w-full border border-[#00000033] rounded-lg shadow px-8 py-4" transition transitionTimeout={500} mountOnEnter>
                     {data.values.map((item) => (
                         <AccordionItem
                             key={item.id}
-                            className="border-b border-gray-200"
+                            className="border-b border-gray-200 last-of-type:border-none"
                             header={
-                                <div
-                                    className="text-lg font-medium text-gray-800 py-4 cursor-pointer"
-                                    dangerouslySetInnerHTML={{ __html: item?.title }} />}
+                                <ul className="flex justify-between items-center py-4 cursor-pointer text-lg font-medium text-gray-800 ">
+                                    <li dangerouslySetInnerHTML={{ __html: item?.title }} />
+                                    <li className="text-xl font-semibold rotate-90 focus-within:rotate-0">{">"}</li>
+                                </ul>
+                            }
 
                             contentProps={{ className: 'accordion-content' }}
                         >

@@ -7,10 +7,10 @@
 @utility container {
   width: 100%;
   padding-inline: 10px;
+  margin : 0 auto;
 
   @variant lg {
     width: 1200px;
-    margin : 0 auto;
     padding-inline: 0px;
   }
 }

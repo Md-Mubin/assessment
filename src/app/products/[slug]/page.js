@@ -5,10 +5,10 @@ import Trailer from "@/Components/Trailer";
 import LearnFromCourse from "@/Components/LearnFromCourse";
 import ExclusiveFeat from "@/Components/ExclusiveFeat";
 import CourseDetails from "@/Components/CourseDetails";
-import CTA_text from "@/Components/CTA_text";
-import CheckList from "@/Components/CheckList";
+import CheckListBox from "@/Components/CheckListBox";
 import { getData } from "@/Service/api";
 
+// ================ for adding seo datas in head elements auto
 export async function generateMetadata({ params, searchParams }) {
   const data = await getData.ielts_course_data(params.slug, searchParams.lang || "bn");
   if (!data) return {};
@@ -24,14 +24,17 @@ export async function generateMetadata({ params, searchParams }) {
   };
 }
 
+// ================ for product page components
 export default async function ProductPage({ params, searchParams }) {
   const lang = searchParams.lang || "bn";
   const data = await getData.ielts_course_data(params.slug, lang);
 
+  // ============== if data is empty than return without crushing 
   if (!data) return <p className="text-slate-400 text-2xl">No Data Found</p>;
 
   return (
     <>
+      {/* ============== seo schema adding in body ============== */}
       {
         data?.seo?.schema.map((item, i) => (
           <script
@@ -42,10 +45,13 @@ export default async function ProductPage({ params, searchParams }) {
         ))
       }
 
+      {/* ============== page part where components organaized ============== */}
       <main className="font-nunito pb-20">
         <Banner title={data?.title} description={data?.description} />
         <div className="container">
           <ul className="flex justify-between">
+            
+            {/* left side elements */}
             <li className="w-[700px]">
               <Instructor propData={data?.sections} />
               <CourseLaidOut propData={data?.sections} />
@@ -53,10 +59,11 @@ export default async function ProductPage({ params, searchParams }) {
               <ExclusiveFeat propData={data?.sections} />
               <CourseDetails propData={data?.sections} />
             </li>
+
+            {/* right side elements */}
             <li className="w-[450px] mt-[-15%]">
               <Trailer propData={data?.media} />
-              <CTA_text propData={data?.cta_text} />
-              <CheckList propData={data?.checklist} />
+              <CheckListBox checkLists={data?.checklist} ctaText={data?.cta_text} />
             </li>
           </ul>
         </div>

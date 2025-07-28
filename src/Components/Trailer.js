@@ -16,7 +16,7 @@ export default function Trailer({ propData }) {
     return (
         <>
             <section className='w-full'>
-                {/* Main Swiper */}
+                {/* Main Content Swiper */}
                 <Swiper
                     spaceBetween={10}
                     loop={true}
@@ -41,7 +41,7 @@ export default function Trailer({ propData }) {
                                                 href={`https://www.youtube.com/watch?v=${item?.resource_value}`}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="absolute inset-0 flex items-center justify-center text-white text-4xl bg-black/30 hover:bg-black/50 duration-200">
+                                                className="absolute inset-0 flex items-center justify-center text-white text-4xl bg-[#00000033] hover:bg-[#00000055] duration-200">
                                                 ▶
                                             </a>
                                         )
@@ -66,7 +66,7 @@ export default function Trailer({ propData }) {
                         mediaItems.map((item, index) => (
                             <SwiperSlide
                                 key={index}
-                                className={`${index === activeIndex && 'border-2 opacity-100 rounded border-blue-600'}`} >
+                                className={`${index === activeIndex && 'border-2 opacity-100 rounded border-blue-800'}`} >
 
                                 <img
                                     src={item?.resource_type === 'video' ? item?.thumbnail_url : item?.resource_value}
