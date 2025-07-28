@@ -10,7 +10,7 @@ export default function ExclusiveFeat({ propData }) {
                 <div className="font-sans bg-white px-8 border border-[#00000033] rounded-lg shadow-md">
                     {
                         data?.values.map((feature) => (
-                            <ul key={feature?.id} className="py-8 flex flex-row items-start justify-between">
+                            <ul key={feature?.id} className="py-8 flex flex-col gap-4 sm:flex-row md:gap-0 items-start justify-between">
                                 <li>
                                     <h3 className="text-xl font-semibold mb-4 text-gray-700">{feature.title}</h3>
                                     <ul>

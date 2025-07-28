@@ -10,7 +10,7 @@ export default function Instructor({ propData }) {
 
                     {
                         data?.values.map((items, i) => (
-                            <ul key={i} className="w-full px-8 py-5 border border-[#00000033] rounded-sm flex items-center gap-5">
+                            <ul key={i} className="w-full px-8 py-5 border border-[#00000033] rounded-sm flex flex-col sm:flex-row items-center gap-5">
                                 <li className="w-[100px] rounded-full overflow-hidden">
                                     <img src={items?.image}/>
                                 </li>

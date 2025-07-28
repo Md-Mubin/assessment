@@ -7,7 +7,7 @@ export default function LearnFromCourse({ propData }) {
             <section className="w-full py-6">
                 <h3 className="text-xl text-black font-semibold mb-4">{data?.name}</h3>
                 
-                <div className="flex flex-wrap justify-between px-6 pb-8 rounded  shadow-[0px_4px_5px_#00000044]">
+                <div className="flex flex-wrap justify-between px-6 pb-8 rounded border border-[#00000033] shadow">
                     {
                         data.values.map((items)=>(
                             <ul key={items?.id} className="flex items-start gap-3 w-[290px] mt-8">

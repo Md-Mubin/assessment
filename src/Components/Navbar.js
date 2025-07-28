@@ -13,12 +13,12 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="py-2 bg-gray-100 sticky top-0 z-100">
+      <nav className="py-2 bg-gray-100 sticky top-0 z-100 shadow-lg">
         <div className="container text-end">
           <Link
             href={`${pathname}?${url.toString()}`}>
             <button className="py-3 px-8 rounded-lg duration-200 cursor-pointer hover:bg-slate-400 bg-slate-500 font-nunito font-semibold tracking-widest text-lg text-white">
-              {lang === "bn" ? "EN" : "BN"}
+              {lang === "bn" ? "for English →" : "বাংলার জন্য →"}
             </button>
           </Link>
         </div>

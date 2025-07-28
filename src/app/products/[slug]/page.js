@@ -49,10 +49,10 @@ export default async function ProductPage({ params, searchParams }) {
       <main className="font-nunito pb-20">
         <Banner title={data?.title} description={data?.description} />
         <div className="container">
-          <ul className="flex justify-between">
+          <ul className="flex flex-col-reverse gap-5 lg:flex-row xl:gap-0 justify-between">
             
             {/* left side elements */}
-            <li className="w-[700px]">
+            <li className="lg:w-[700px]">
               <Instructor propData={data?.sections} />
               <CourseLaidOut propData={data?.sections} />
               <LearnFromCourse propData={data?.sections} />
@@ -61,7 +61,7 @@ export default async function ProductPage({ params, searchParams }) {
             </li>
 
             {/* right side elements */}
-            <li className="w-[450px] mt-[-15%]">
+            <li className="lg:w-[450px] mt-[50px] lg:mt-[-15%]">
               <Trailer propData={data?.media} />
               <CheckListBox checkLists={data?.checklist} ctaText={data?.cta_text} />
             </li>
