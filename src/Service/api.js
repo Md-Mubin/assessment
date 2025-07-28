@@ -1,6 +1,6 @@
 // ============== common api backend link handle
 const api = async (endPoint, method) => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BACK_END_BASE_API}/api/v1${endPoint}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BACK_END_BASE_API}/discovery-service/api/v1${endPoint}`, {
     method,
     headers: {
       "Content-Type": "application/json",
